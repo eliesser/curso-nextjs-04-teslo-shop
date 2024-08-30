@@ -1,10 +1,10 @@
 import { titleFont } from '@/config/fonts';
+import { Title } from '@/components/ui/title/Title';
 
 export default function ShopPage() {
   return (
-    <div className=''>
-      <h1>Hola Mundo</h1>
-      <h1 className={titleFont.className}>Hola Mundo</h1>
-    </div>
+    <>
+      <Title title='Shop' subtitle='All products' className='mb-2' />
+    </>
   );
 }
