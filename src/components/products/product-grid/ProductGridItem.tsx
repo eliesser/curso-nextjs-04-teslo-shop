@@ -18,7 +18,7 @@ export const ProductGridItem = ({ product }: Props) => {
         <Image
           src={`/products/${displayImage}`}
           alt={product.title}
-          className='w-full object-contain'
+          className='w-full object-contain rounded-sm'
           width={500}
           height={500}
           onMouseEnter={() => setDisplayImage(product.images[1])}
