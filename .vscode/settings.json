@@ -8,5 +8,5 @@
     "prettier.printWidth": 100
   },
   "npm-scripts.showStartNotification": false,
-  "cSpell.words": ["Teslo"]
+  "cSpell.words": ["clsx", "Teslo", "zustand"]
 }
