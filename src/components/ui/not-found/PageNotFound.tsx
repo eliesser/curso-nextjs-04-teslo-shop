@@ -23,6 +23,7 @@ export const PageNotFound = () => {
           alt='404'
           height={550}
           width={550}
+          priority
         />
       </div>
     </div>
