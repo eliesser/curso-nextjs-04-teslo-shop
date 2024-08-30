@@ -7,5 +7,6 @@
   "[typescriptreact]": {
     "prettier.printWidth": 100
   },
-  "npm-scripts.showStartNotification": false
+  "npm-scripts.showStartNotification": false,
+  "cSpell.words": ["Teslo"]
 }
