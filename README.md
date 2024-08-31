@@ -17,3 +17,11 @@
 1. Create the production build: `npm run build`.
 
 2. Execute the project in pro: `npm run start`.
+
+## Prisma
+
+1. Install the Prisma CLI as a development dependency in the project: `npm install prisma --save-dev`.
+
+2. Finally, set up Prisma ORM with the init command of the Prisma CLI: `npx prisma init --datasource-provider PostgreSQL`.
+
+3. Set the DATABASE_URL in the .env file to point to your existing database.
