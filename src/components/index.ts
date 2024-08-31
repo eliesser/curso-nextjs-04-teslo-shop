@@ -7,6 +7,7 @@ export * from './product/slideshow/ProductSlideshow';
 export * from './product/slideshow/ProductMobileSlideshow';
 
 export * from './ui/footer/Footer';
+export * from './ui/pagination/Pagination';
 export * from './ui/sidebar/Sidebar';
 export * from './ui/title/Title';
 export * from './ui/top-menu/TopMenu';
