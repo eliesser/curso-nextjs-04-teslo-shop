@@ -10,9 +10,11 @@
 
 4. Database set up `docker compose up -d`.
 
-5. Running prisma migrations: `npx prisma migrate dev`
+5. Running prisma migrations: `npx prisma migrate dev`.
 
-6. Execute the project in dev: `npm run dev`.
+6. Run the seed `npm run seed`.
+
+7. Execute the project in dev: `npm run dev`.
 
 ## Pro
 
@@ -29,3 +31,11 @@
 - Set the DATABASE_URL in the .env file to point to your existing database.
 
 - Run the following command in your terminal to create the PostgreSQL database and the User and Post tables represented by your models: `npx prisma migrate dev --name init`
+
+- Generate prism client: `npx primas generate`
+
+## Seed
+
+1. crear el archivo `seed-database.ts` en 'src/seed'.
+
+2. Hacer un cd a la carpeta `src/seed` y ejecutar el siguiente comando `npx tsc --init` para crear el `tsconfig.json` por defecto de typescript:
