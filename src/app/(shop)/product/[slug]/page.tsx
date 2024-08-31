@@ -1,5 +1,6 @@
 export const revalidate = 604800;
 
+import { ResolvingMetadata, Metadata } from 'next';
 import { notFound } from 'next/navigation';
 
 import { titleFont } from '@/config/fonts';
@@ -8,12 +9,35 @@ import {
   ProductSlideshow,
   QuantitySelector,
   SizeSelector,
+  StockLabel,
 } from '@/components';
 import { getProductBySlug } from '@/actions';
 
 interface Props {
   params: {
     slug: string;
+  };
+}
+
+export async function generateMetadata(
+  { params }: Props,
+  parent: ResolvingMetadata
+): Promise<Metadata> {
+  const slug = params.slug;
+
+  const product = await getProductBySlug(slug);
+
+  const titleDescription = {
+    title: product?.title ?? 'Product not found',
+    description: product?.description ?? '',
+  };
+
+  return {
+    ...titleDescription,
+    openGraph: {
+      ...titleDescription,
+      images: [`/products/${product?.images[1]}`],
+    },
   };
 }
 
@@ -40,6 +64,8 @@ export default async function ProductBySlugPage({ params }: Props) {
       </div>
 
       <div className='col-span-1 px-5 '>
+        <StockLabel slug={product.slug} />
+
         <h1 className={`${titleFont.className} antialiased font-bold text-xl`}>{product.title}</h1>
 
         <p className='text-lg mb-5'>${product.price}</p>
