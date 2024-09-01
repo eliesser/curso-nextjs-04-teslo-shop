@@ -1,13 +1,17 @@
 'use client';
 
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
+
 import { IoCartOutline, IoSearchOutline } from 'react-icons/io5';
+import clsx from 'clsx';
 
 import { titleFont } from '@/config/fonts';
 import { useUIStore } from '@/store';
 
 export const TopMenu = () => {
   const openMenu = useUIStore((state) => state.openSideMenu);
+  const pathname = usePathname();
 
   return (
     <nav className='flex px-5 justify-between items-center w-full'>
@@ -20,19 +24,25 @@ export const TopMenu = () => {
 
       <div className='hidden sm:block'>
         <Link
-          className='m-2 p-2 rounded-md transition-all hover:bg-gray-100'
+          className={clsx('m-2 p-2 rounded-md transition-all hover:bg-gray-100', {
+            underline: pathname === '/category/men',
+          })}
           href={'/category/men'}
         >
           Men
         </Link>
         <Link
-          className='m-2 p-2 rounded-md transition-all hover:bg-gray-100'
+          className={clsx('m-2 p-2 rounded-md transition-all hover:bg-gray-100', {
+            underline: pathname === '/category/women',
+          })}
           href={'/category/women'}
         >
           Women
         </Link>
         <Link
-          className='m-2 p-2 rounded-md transition-all hover:bg-gray-100'
+          className={clsx('m-2 p-2 rounded-md transition-all hover:bg-gray-100', {
+            underline: pathname === '/category/kid',
+          })}
           href={'/category/kid'}
         >
           Kids
