@@ -7,26 +7,25 @@ import bcryptjs from 'bcryptjs';
 
 import prisma from './lib/prisma';
 
+const privateRoutes = ['/checkout/address', '/profile'];
+
 export const authConfig: NextAuthConfig = {
   pages: {
     signIn: '/auth/login',
     newUser: '/auth/new-account',
   },
   callbacks: {
-    /* authorized({ auth, request: { nextUrl } }) {
-      console.log({ auth });
-      // const isLoggedIn = !!auth?.user;
+    authorized({ auth, request: { nextUrl } }) {
+      const isLoggedIn = !!auth?.user;
 
-      // const isOnDashboard = nextUrl.pathname.startsWith('/dashboard');
-      // if (isOnDashboard) {
-      //   if (isLoggedIn) return true;
-      //   return false; // Redirect unauthenticated users to login page
-      // } else if (isLoggedIn) {
-      //   return Response.redirect(new URL('/dashboard', nextUrl));
-      // }
+      const isPrivateRoute = privateRoutes.some((privateRoutes) =>
+        nextUrl.pathname.startsWith(privateRoutes)
+      );
+
+      if (isPrivateRoute && !isLoggedIn) return false;
 
       return true;
-    }, */
+    },
     jwt({ token, user }) {
       if (user) token.data = user;
 
