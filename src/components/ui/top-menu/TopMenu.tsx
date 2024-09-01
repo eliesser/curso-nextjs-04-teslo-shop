@@ -24,7 +24,7 @@ export const TopMenu = () => {
 
       <div className='hidden sm:block'>
         <Link
-          className={clsx('m-2 p-2 rounded-md transition-all hover:bg-gray-100', {
+          className={clsx('m-2 p-2 rounded-md transition-all hover:bg-gray-100 hover:underline', {
             underline: pathname === '/category/men',
           })}
           href={'/category/men'}
@@ -32,7 +32,7 @@ export const TopMenu = () => {
           Men
         </Link>
         <Link
-          className={clsx('m-2 p-2 rounded-md transition-all hover:bg-gray-100', {
+          className={clsx('m-2 p-2 rounded-md transition-all hover:bg-gray-100 hover:underline', {
             underline: pathname === '/category/women',
           })}
           href={'/category/women'}
@@ -40,7 +40,7 @@ export const TopMenu = () => {
           Women
         </Link>
         <Link
-          className={clsx('m-2 p-2 rounded-md transition-all hover:bg-gray-100', {
+          className={clsx('m-2 p-2 rounded-md transition-all hover:bg-gray-100 hover:underline', {
             underline: pathname === '/category/kid',
           })}
           href={'/category/kid'}
