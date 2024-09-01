@@ -15,7 +15,7 @@ export const setUserAddress = async (address: Address, userId: string) => {
     console.log(error);
     return {
       ok: false,
-      message: 'No se pudo grabar la dirección',
+      message: 'Unable to record the address',
     };
   }
 };
@@ -56,6 +56,6 @@ const createOrReplaceAddress = async (address: Address, userId: string) => {
     return updatedAddress;
   } catch (error) {
     console.log(error);
-    throw new Error('No se pudo grabar la dirección');
+    throw new Error('Unable to record the address');
   }
 };
