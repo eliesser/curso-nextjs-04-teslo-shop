@@ -6,7 +6,13 @@ async function main() {
   await prisma.product.deleteMany();
   await prisma.category.deleteMany();
 
-  const { categories, products } = initialData;
+  await prisma.user.deleteMany();
+
+  const { categories, products, users } = initialData;
+
+  await prisma.user.createMany({
+    data: users,
+  });
 
   const categoriesData = categories.map((name) => ({ name }));
 
@@ -41,7 +47,7 @@ async function main() {
     });
   });
 
-  console.log('Seed ejecutado correctamente');
+  console.log('Seed executed correctly');
 }
 
 (() => {
