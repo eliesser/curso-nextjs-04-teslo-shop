@@ -1,7 +1,7 @@
 'use server';
 
 import { signIn } from '@/auth.config';
-import { sleep } from '@/utils';
+// import { sleep } from '@/utils';
 
 export async function authenticate(
   prevState: string | undefined,
@@ -32,7 +32,7 @@ export const login = async (email: string, password: string) => {
     console.log(error);
     return {
       ok: false,
-      message: 'No se pudo iniciar sesión',
+      message: 'Unable to log in',
     };
   }
 };
